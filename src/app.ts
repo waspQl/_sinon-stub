@@ -12,6 +12,6 @@ assert.equal(stub(42), 1)
 
 stub.withArgs(1).throws('Error')
 assert.throws(
-  stub(1),
-  (() => { throw new Error('Error') })
-)
+  stub.bind(null, 1),
+  Error
+);
